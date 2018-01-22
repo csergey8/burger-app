@@ -37,6 +37,7 @@ const fetchOrdersStart = (state, action) => {
 };
 
 const fetchOrdersSuccess = (state, action) => {
+  console.log(action+ "!!!s");
   return updateObject(state, {
     orders: action.orders,
     loading: false
@@ -55,13 +56,14 @@ const reducer = (state = initialState, action) => {
       return purchaseBurgerStart(state, action);
     case actionTypes.PURCHASE_BURGER_SUCCESS:
       return purchaseBurgerSuccess(state, action);
-    case action.PURCHASE_BURGER_FAIL:
+    case actionTypes.PURCHASE_BURGER_FAIL:
       return purchaseBurgerFail(state, action);
-    case action.FETCH_ORDERS_START:
+    case actionTypes.FETCH_ORDERS_START:
       return fetchOrdersStart(state, action);
-    case action.FETCH_ORDERS_SUCCESS:
+    case actionTypes.FETCH_ORDERS_SUCCESS:
+      console.log("1");
       return fetchOrdersSuccess(state, action);
-    case action.FETCH_ORDERS_FAIL:
+    case actionTypes.FETCH_ORDERS_FAIL:
       return fetchOrdersFail(state, action);
     default:
       return state;
