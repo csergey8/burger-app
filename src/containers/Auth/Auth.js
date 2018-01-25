@@ -53,8 +53,6 @@ class Auth extends Component {
     }
   }
 
-
-
   inputChangedHandler = (event, controlName) => {
     const updatedControls = updateObject(this.state.controls, {
       [controlName]: updateObject(this.state.controls[controlName], {
@@ -121,7 +119,6 @@ class Auth extends Component {
     if (this.props.isAuthenticated) {
       authRedirect = <Redirect to={this.props.authRedirectPath} />;
     }
-    //console.log(this.props.authRedirectPath);
     return (
       <div className={classes.Auth}>
         {authRedirect}

@@ -37,7 +37,6 @@ const fetchOrdersStart = (state, action) => {
 };
 
 const fetchOrdersSuccess = (state, action) => {
-  console.log(action+ "!!!s");
   return updateObject(state, {
     orders: action.orders,
     loading: false
@@ -46,7 +45,7 @@ const fetchOrdersSuccess = (state, action) => {
 
 const fetchOrdersFail = (state, action) => {
   return updateObject(state, { loading: false });
-}
+};
 
 const reducer = (state = initialState, action) => {
   switch (action.type) {
@@ -61,7 +60,6 @@ const reducer = (state = initialState, action) => {
     case actionTypes.FETCH_ORDERS_START:
       return fetchOrdersStart(state, action);
     case actionTypes.FETCH_ORDERS_SUCCESS:
-      console.log("1");
       return fetchOrdersSuccess(state, action);
     case actionTypes.FETCH_ORDERS_FAIL:
       return fetchOrdersFail(state, action);
